@@ -2,21 +2,25 @@ const budget = document.getElementById('budget')
 const expensive = document.getElementById('expensive')
 const expensiveAmount = document.getElementById('expensive_amount')
 
-const addBudget = document.getElementById('addBudget')
-const addExpensive = document.getElementById('addExpensive')
+const btnAddBudget = document.getElementById('addBudget')
+const btnAddExpensive = document.getElementById('addExpensive')
+
+let gastos = []
 
 let presupuesto = 0
 let idExpensive = 0
-let gastos = []
 
-addBudget.addEventListener('click', () => {
-  if (budget.value === '') return alert('Please, ingresar tu presupuesto')
-  presupuesto = +budget.value
-  budget.value = ''
+import { addBudget } from './functions.js'
+
+btnAddBudget.addEventListener('click', () => {
+  // if (budget.value === '') return alert('Please, ingresar tu presupuesto')
+  // presupuesto = +budget.value
+  // budget.value = ''
+  presupuesto = addBudget(budget.value, presupuesto)
   updateTotal()
 })
 
-addExpensive.addEventListener('click', () => {
+btnAddExpensive.addEventListener('click', () => {
   if (presupuesto === 0) {
     alert('Please, primero ingresa tu presupuesto')
   } else {
