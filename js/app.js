@@ -10,13 +10,13 @@ let gastos = []
 let presupuesto = 0
 let idExpensive = 0
 
-import { addBudget } from './functions.js'
+// import { addBudget } from './functions.js'
 
 btnAddBudget.addEventListener('click', () => {
-  // if (budget.value === '') return alert('Please, ingresar tu presupuesto')
-  // presupuesto = +budget.value
-  // budget.value = ''
-  presupuesto = addBudget(budget.value, presupuesto)
+  if (budget.value === '') return alert('Please, ingresar tu presupuesto')
+  presupuesto = +budget.value
+  budget.value = ''
+  // presupuesto = addBudget(budget.value, presupuesto)
   updateTotal()
 })
 
